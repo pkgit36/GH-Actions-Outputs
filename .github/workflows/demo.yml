@@ -28,8 +28,8 @@ jobs:
       - name: Download artifacts
         uses: actions/upload-artifact@v3
         with: 
-          name: artifacts
-          path: artifacts
+          name: artifact
+          path: test-file.yml
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -40,5 +40,7 @@ jobs:
           name: artifacts
       - name: list the files
         run: ls -lrt
+      - name: Display the content
+        run: cat test-file.yml
       - name: Deploy
         run: echo "Deploying..."
