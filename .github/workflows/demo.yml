@@ -37,7 +37,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/download-artifact@v3
         with: 
-          name: artifacts
+          name: artifact
       - name: list the files
         run: ls -lrt
       - name: Display the content
